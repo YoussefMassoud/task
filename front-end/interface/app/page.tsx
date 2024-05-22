@@ -1,7 +1,5 @@
-import Image from "next/image";
+import TopicsList from "./components/topicList";
 
 export default function Home() {
-  return (
-    <div>interface</div>
-  );
+  return <TopicsList />;
 }
