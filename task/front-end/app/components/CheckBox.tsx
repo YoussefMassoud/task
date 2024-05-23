@@ -12,7 +12,7 @@ const makeItDoneInApi = async (id: string, newIsDone: boolean) => {
   const result = await axios.patch(`http://localhost:3000/tasks/${id}`, {
     isDone: newIsDone,
   });
-  console.log("🚀 ~ makeItDoneInApi ~ result:", result)
+  console.log("🚀 ~ makeItDoneInApi ~ result:", result);
   return result;
 };
 
@@ -29,11 +29,14 @@ const CheckBox = ({ id, setAllTopics, allTopics }: CheckBoxProps) => {
   };
 
   return (
-    <input
-      type="checkbox"
-      checked={allTopics.find((topic) => topic.id === id)?.isDone || false}
-      onChange={handleCheckBoxChange}
-    />
+    <div className="flex items-center ">
+      <input
+        type="checkbox"
+        checked={allTopics.find((topic) => topic.id === id)?.isDone || false}
+        onChange={handleCheckBoxChange}
+        className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 "
+      />
+    </div>
   );
 };
 

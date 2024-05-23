@@ -49,15 +49,15 @@ export default function TopicsList() {
       {allTopies?.map((t) => (
         <div
           key={t.id}
-          className="p-4 border border-slate-300 my-3 flex justify-between gap-5 items-start"
+          className="p-4 border-2 border-slate-300 my-3 flex justify-between gap-5 items-start"
         >
           <div>
             <h2 className="font-bold text-2xl">{t.title}</h2>
             <div>{t.description}</div>
           </div>
 
-          <div className="flex flex-col gap-2">
-            <div className="flex items-center flex-row gap-4 ">
+          <div className="flex flex-col gap-2 ">
+            <div className="flex items-center flex-row gap-7 ml-5 ">
               <CheckBox
                 id={t.id}
                 setAllTopics={setAllTopies}
@@ -72,7 +72,7 @@ export default function TopicsList() {
                 <HiPencilAlt size={24} />
               </Link>
             </div>
-            <div>{formatDate(t.dueDate)}</div>
+            <button className="py-1 px-2 border-2 border-gray-400 rounded-3xl">{formatDate(t.dueDate)}</button>
           </div>
         </div>
       ))}
